@@ -22,19 +22,19 @@ object Main {
 
     @JvmStatic
     fun main(vararg args: String) {
-println(convertXmlStringToJsonString(
-        "<a>a</a><f /><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c>"))
-// {"a":["a","b","c"],"b":{"a":1,"b":2},"c":true,"f":""}
-println(convertJsonStringToXmlString("""
-    {"a":["a","b","c"],"b":{"a":1,"b":2},"c":true,"f":""}
-    """))
-// <a>a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c><f/>
-println(convertXmlStringToJsonString(
-    "<p a=\"1\"><a a=\"1\">a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c></p>"))
-// {"p":{"a":[1,{"a":1,"content":"a"},"b","c"],"b":{"a":1,"b":2},"c":true}}
-println(convertJsonStringToXmlString("""
-    {"a":[1,{"a":1,"content":"a"},"b","c"],"b":{"a":1,"b":2},"c":true}
-    """, "p"))
-// <p><a>1</a><a><a>1</a>a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c></p>
+        println(convertXmlStringToJsonString(
+                "<a>a</a><f /><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c>"))
+        // {"a":["a","b","c"],"b":{"a":1,"b":2},"c":true,"f":""}
+        println(convertJsonStringToXmlString("""
+            {"a":["a","b","c"],"b":{"a":1,"b":2},"c":true,"f":""}
+            """))
+        // <a>a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c><f/>
+        println(convertXmlStringToJsonString(
+            "<p a=\"1\"><a a=\"1\">a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c></p>"))
+        // {"p":{"a":[1,{"a":1,"content":"a"},"b","c"],"b":{"a":1,"b":2},"c":true}}
+        println(convertJsonStringToXmlString("""
+            {"a":[1,{"a":1,"content":"a"},"b","c"],"b":{"a":1,"b":2},"c":true}
+            """, "p"))
+        // <p><a>1</a><a><a>1</a>a</a><a>b</a><a>c</a><b><a>1</a><b>2</b></b><c>true</c></p>
     }
 }
